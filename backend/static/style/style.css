@@ -1,0 +1,318 @@
+:root {
+    --background: #EAEEF1;
+    --background-dark: #2F3136;
+    --main-color: #FF820C;
+    --dark-main: #FF7B51;
+    --text: #101010;
+    --dark-text: #FAFAFA;
+    --red: #E23A47;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+button {
+    border: none;
+    background: none;
+}
+
+.button {
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: 500;
+    color: var(--text);
+    cursor: pointer;
+}
+
+.button:hover {
+    color: var(--text);
+}
+
+.dark .button {
+    color: var(--dark-text);
+}
+
+.dark .button:hover {
+    color: var(--dark-text);
+}
+
+.icon {
+    background-size: contain;
+    width: 40px;
+    height: 40px;
+}
+
+.wrapper {
+    width: 90%;
+    max-width: 1170px;
+    margin: 0 auto;
+}
+
+.body {
+    background: var(--background);
+    color: var(--text);
+}
+
+.dark {
+    background: var(--background-dark);
+    /*color: var(--dark-text);*/
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 90px;
+}
+
+.logo {
+    width: 65px;
+    height: 60px;
+}
+
+.nav {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+}
+
+.tg {
+    background-image: url('../images/tg.svg');
+    background-size: contain;
+}
+
+.dark .tg {
+    background-image: url('../images/dark_tg.svg');
+}
+
+.them {
+    background-image: url('../images/light.svg');
+    background-size: contain;
+}
+.dark .them {
+    background-image: url('../images/dark.svg');
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    margin: 10% auto;
+    gap: 20px;
+}
+
+.form {
+    align-items: center;
+}
+
+.form input {
+    max-width: 400px;
+    width: 100%;
+    height: 40%;
+    font-size: 18px;
+    padding: 10px 20px;
+    border-radius: 20px;
+    transition: all .3s ease-out;
+}
+
+.dark .form input {
+    border: 2px solid var(--dark-text);
+    background: #42464D !important;
+    color: #F6F6F6 !important;
+}
+
+.form input:focus {
+    border: 2px solid var(--text);
+    border-radius: 15px;
+}
+
+.dark .form input:focus {
+    border: 2px solid var(--dark-text);
+    border-radius: 15px;
+}
+
+.login {
+    max-width: 200px;
+    width: 100%;
+    height: 40%;
+    color: var(--text);
+    padding: 5px 10px;
+    font-size: 18px;
+    border: 2px solid var(--main-color);
+    background-color: inherit;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: all .2s ease-out;
+    font-family: 'Ubuntu500', sans-serif;
+}
+
+.dark .login {
+    color: var(--dark-text);
+    border: 2px solid var(--dark-main);
+}
+
+.login:hover {
+    color: var(--dark-text);
+    background-color: var(--main-color);
+}
+
+.dark .login:hover {
+    color: var(--dark-text);
+    background-color: var(--dark-main);
+}
+
+.lesson-form label {
+    display: none;
+}
+
+.lesson-form {
+    display: grid;
+    align-items: center;
+    grid-template:[row1-start] "datepicker number theme teacher group subgroup cabinet btn-delete-form" 60px [row1-end]
+    / 1fr 1fr 2fr 2fr 1fr 1fr 1fr auto;
+    margin: 20px 0;
+    border-radius: 20px !important;
+    background: var(--dark-text);
+    gap: 0 5px;
+    box-shadow: 0px 4px 4px rgba(114, 114, 114, 0.25);
+}
+
+.lesson-form select {
+    background: inherit;
+}
+
+.dark .lesson-form select {
+    color: #F6F6F6 !important;
+}
+
+.dark .lesson-form {
+    background: #42464D !important;
+    box-shadow: none;
+}
+
+.datepicker {
+    grid-area: datepicker;
+    text-align: center;
+    height: 100%;
+    background: inherit !important;
+}
+
+.dark .datepicker {
+    color: #F6F6F6 !important;
+    border: 1px solid #5E6269;
+}
+
+.form-control {
+    border-radius: 20px 0 0 20px !important;
+}
+
+.number {
+    grid-area: number;
+    text-align: center;
+    height: 100%;
+    border: none;
+}
+
+.theme {
+    grid-area: theme;
+    text-align: center;
+    height: 100%;
+    /*border: 1px solid #ced4da;*/
+    border: none;
+}
+
+.teacher {
+    grid-area: teacher;
+    text-align: center;
+    height: 100%;
+    /*border: 1px solid #ced4da;*/
+    border: none;
+}
+
+.group {
+    grid-area: group;
+    text-align: center;
+    height: 100%;
+    /*border: 1px solid #ced4da;*/
+    border: none;
+}
+
+.subgroup {
+    grid-area: subgroup;
+    text-align: center;
+    height: 100%;
+    /*border: 1px solid #ced4da;*/
+    border: none;
+}
+
+.cabinet {
+    grid-area: cabinet;
+    text-align: center;
+    height: 100%;
+    /*border: 1px solid #ced4da;*/
+    border: none;
+}
+
+.btn-delete-form {
+    grid-area: btn-delete-form;
+    grid-row: 1 / span 2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    height: 100%;
+    width: 60px;
+    background: var(--red);
+    border-radius: 0 20px 20px 0;
+}
+
+.del {
+    height: 30px;
+    width: 30px;
+    background-image: url('../images/del.svg');
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+.add-button {
+    display: grid;
+    grid-template:[row1-start] "span create add" 60px [row1-end]
+    / 1fr 1fr 1fr;
+    align-items: center;
+    margin-top: 40px;
+    justify-items: center;
+}
+.add {
+    grid-area: add;
+    background: var(--main-color);
+    color: var(--dark-text);
+    border-radius: 20px;
+    padding: 10px 20px;
+    width: fit-content;
+    margin-left: auto;
+}
+.add:hover {
+    color: var(--dark-text);
+}
+.dark .add {
+    background: var(--dark-main);
+}
+.create {
+    grid-area: create;
+    height: 50px;
+    width: 50px;
+    background-image: url('../images/create.svg');
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+.dark .create {
+    background-image: url('../images/dark_create.svg');
+}
+.success {
+    color: green;
+    font-size: 20px;
+}
+.dark .success {
+    color: #01c901;
+}

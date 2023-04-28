@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+{% block title %}Расписание{% endblock %}
+{% block logout %}<a href="{% url 'logout' %}" class="button">Выйти</a>{% endblock %}
+{% if request.user.is_superuser %}
+    {% block content %}
+        <div class="main">
+            {% if messages %}
+                <ul class="messages">
+                    {% for message in messages %}
+                        <li {% if message.tags %} class="{{ message.tags }}" {% endif %}>{{ message }}</li>
+                    {% endfor %}
+                </ul>
+            {% endif %}
+            <form id="form-container" method="POST">
+                {% csrf_token %}
+                {{ lesson_formset.management_form }}
+                {% for form in lesson_formset %}
+                    <div class="lesson-form">
+                        {{ form }}
+                        <a id="form-0-btn-delete" class="btn-delete-form" onClick="removeForm(this)"><span
+                                class="del"></span></a>
+                    </div>
+                {% endfor %}
+                <div id="add-btn" class="add-button">
+                    <a id="add-form" type="button" class="create button"></a>
+                    <button type="submit" class="add button">СОЗДАТЬ</button>
+                </div>
+            </form>
+        </div>
+    {% endblock %}
+{% endif %}
+
